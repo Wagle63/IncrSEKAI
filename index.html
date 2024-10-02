@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="IncrSEKAI" content="width=device-width, initial-scale=1.0">
+    <title>IncrSEKAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="Title">IncrSEKAI</h1>
+    </header>
+
+    <!-- Ventana de Dialogo -->
+    <div id="dialog-container" class="dialog-container">
+        <p id="dialog-text">Deberia de estudiar pero tengo hambre</p>
+    </div>
+
+    <div id="game-container" class="game-container">
+
+        <!-- PRE ISEKAI-->
+        <div id="pre-isekai-container" class="box window">
+            <button id="study-button">Estudiar</button> <!-- se guarda el estudio para mecanica futura (TODO)-->
+            <span id="study"></span>
+            <button id="start-button">Ir a la tienda</button>
+        </div>
+
+        <!-- ISEKAI -->
+
+        <!-- Stats de jugador -->
+        <div id="player-container" class="box window hidden">
+            <h2>Estadisticas</h2>
+            <p>Vida: <span id="player-health-value">10.0</span></p>
+            <button id="healingSpell-button" class="hidden">Hechizo de cura</button>
+            <p>Daño: <span id="player-damage-value">1</span></p>
+            <p>Oro: <span id="gold">0</span> </p>
+        </div>
+
+        <!-- Enemigos -->
+        <div id="enemy-container" class="box window hidden">
+            <h2>Enemigo</h2>
+            <p>Vida Enemigo: <span id="enemy-health-value">10</span></p>
+            <button id="attack-button">Atacar</button>
+        </div>
+
+        <!-- <button id="heal-button">Curar</button> -->
+
+        <!-- Tienda -->
+        <div id="shop-container" class="box window hidden">
+            <h2>Tienda</h2>
+            <button id="damage-upgrade-button">Comprar arma <br> Costo: 1
+            </button>
+            <button id="healingSpell-upgrade-button">Comprar hechizo de cura <br>Costo: 1</button>
+        </div>
+
+    </div>
+
+    <script src="consts.js"></script>
+    <script src="script.js"></script>
+    <script src="preIsekai.js"></script>
+    <script src="isekai1.js"></script>
+    <script src="playerStats.js"></script>
+    <script src="render.js"></script>
+
+
+</body>
+
+</html>

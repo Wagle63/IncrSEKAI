@@ -1,0 +1,118 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    margin-bottom: 0.7%;
+    background-color: #e0a11869;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    width: 100%;
+    height: 1.5em;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    margin: 5px 0;
+}
+
+button {
+    font-size: 13px;
+    padding: 0.5em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    border-color: #0a0a0a91;
+    margin: 0.2em 0.2em;
+}
+
+.dialog-container {
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    height: 6.3em;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 1%;
+    z-index: 1000;
+    background-color: rgb(27, 27, 27);
+}
+#dialog-text {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.box {
+    position: absolute;
+    top: -100000px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+}
+
+.window {
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: default;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    -webkit-font-smoothing: none;
+    transition: filter 1.5s;
+    touch-action: manipulation;
+    height: 80%;
+    margin: 0px;
+}
+
+#study-button {
+    font-size: 20px;
+    padding: 1em 1em;
+}
+
+#player-container {
+    height: fit-content;
+}
+
+#shop-container {
+    background-color: rgb(202, 205, 50);
+}
+
+#upgrade-button {
+    font-size: 16px;
+}
+
+#pre-isekai-container {
+    display: grid;
+    padding: 2em;
+}
+#start-button {
+    font-size: 20px;
+    padding: 1em 1em;
+}
+
+#healingSpell-button {
+    font-size: 10px;
+    padding: 1em 1em;
+}
+
