@@ -1,15 +1,7 @@
-let maxHealth = 10;
-let playerHealth = maxHealth;
-let damage = 1;
-let regeneration = 0.1;
 let enemyHealth = 10;
-let gold = 0;
-let defense = 0.1;
-let lastLowHealthNotification = 0;
 let enemyDamage = 1;
 let damageUpgradeCost = 1;
 let healingSpellUpgradeCost = 1;
-let healingSpell = 0;
 
 // Referencias a elementos HTML
 const gameContainer = document.getElementById('game-container');
@@ -24,7 +16,7 @@ const healingSpellUpgradeButton = document.getElementById('healingSpell-upgrade-
 // Configuración inicial de los elementos HTML
 function showISEKAIUI() {
     // TODO? añadir animacion
-    unlocks = 1;
+    unlocks = 2;
     gameContainer.style.cursor = 'all-scroll';
     playerContainer.style.display = 'grid';
     enemyContainer.style.display = 'grid';
@@ -36,8 +28,8 @@ function attackEnemy() {
         lowHealthNotification();
         return;
     }
-    enemyHealth -= damage;
-    if (Math.random() < (1 - defense)) {
+    enemyHealth -= playerDamage;
+    if (Math.random() < (1 - playerDefense)) {
         if (playerHealth <= enemyDamage) {
             playerHealth = 0.1;
         } else {
@@ -45,35 +37,39 @@ function attackEnemy() {
         }
         updatePlayerHealth();
     }
-    if (enemyHealth <= 0) {
-        enemyHealth = 10;
-        enemyHealthDisplay.textContent = enemyHealth;
-        gold++;
-        updateGold();
-    } else {
-        enemyHealthDisplay.textContent = enemyHealth;
-    }
+    updateEnemyHealth();
 }
 attackButton.addEventListener('click', () => {
     attackEnemy();
 });
 
-
-// // Generar puntos por segundo automáticamente
-// setInterval(() => {
-//     score += pointsPerSecond;
-//     updateScore();
-// }, 1000);
+// Funcion para actualizar vida del enemigo
+function updateEnemyHealth() {
+    if (enemyHealth <= 0) {
+        enemyHealth = 10;
+        gold++;
+        updateGold();
+        if (unlocks == 2) { // TODO: quitar de aca
+            shopContainer.style.display = 'grid';
+            unlocks++;
+        }
+    }
+    enemyHealthDisplay.textContent = enemyHealth;
+}
 
 // Función para comprar mejoras de daño
 function buyDamageUpgrade() {
     if (gold >= damageUpgradeCost) {
         gold -= damageUpgradeCost;
-        damage++;
+        playerDamage++;
         damageUpgradeCost = (damageUpgradeCost * 2);
-        damageUpgradeDamageButton.innerText = `Mejorar arma \n Costo: ${damageUpgradeCost.toFixed(0)}`;
+        damageUpgradeDamageButton.innerText = `Mejorar arma a ${materiales[playerDamage]} \n Costo: ${damageUpgradeCost.toFixed(0)}`;
         updateDamage();
         updateGold();
+    }
+    if (playerDamage == 4) {
+        showRunicForgeUI();
+        unlocks++;
     }
 }
 damageUpgradeDamageButton.addEventListener('click', () => {

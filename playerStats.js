@@ -1,5 +1,13 @@
+let maxHealth = 10;
+let playerHealth = maxHealth;
+let lastLowHealthNotification = 0;
+let healingSpell = 0;
+let gold = 0;
+let playerDefense = 0.1;
+let playerDamage = 1;
+let regeneration = 0.1;
 
-// re
+// Referencias a elementos HTML
 const healingSpellButton = document.getElementById('healingSpell-button');
 const goldDisplay = document.getElementById('gold');
 const regenerationDisplay = document.getElementById('regeneration');
@@ -44,22 +52,18 @@ function regenerate() {
 setInterval(regenerate, 1000);
 
 // Función para calcular la defensa del jugador
-function updateDefense() {
-    defense += 0.1;
+function updatePlayerDefense() {
+    playerDefense += 0.1;
 }
 
 // Función para actualizar el daño del jugador
 function updateDamage() {
-    playerDamageDisplay.textContent = damage;
+    playerDamageDisplay.textContent = playerDamage;
 }
 
 // Función para actualizar el oro del jugador
 function updateGold() {
-    goldDisplay.textContent = gold;
-    if (unlocks == 1) {
-        shopContainer.style.display = 'grid';
-        unlocks++;
-    }
+    goldDisplay.innerText = gold;
 }
 
 // Funcion de notificacion de vida baja

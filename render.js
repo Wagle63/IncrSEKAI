@@ -50,18 +50,9 @@ function render(x, y) {
   /*cachedBoxes[1].style.left = (x) + "px"
   dragonTabHeight = cachedBoxes[3].getBoundingClientRect().height
   cachedBoxes[1].style.top = (y + 162 + dragonTabHeight / 2) + "px"*/
-  if (unlocks >= 1) {
-    //player-stats tab
-    cachedBoxes[1].style.left = (x) + "px"
-    cachedBoxes[1].style.top = (y) + "px"
-    //enemys tab
-    cachedBoxes[2].style.left = (x + boxPositions[2].posX) + "px"
-    cachedBoxes[2].style.top = (y + boxPositions[2].posY) + "px"
-  }
-  if (unlocks >= 2) {
-    //shop tab
-    cachedBoxes[3].style.left = (x + boxPositions[3].posX) + "px"
-    cachedBoxes[3].style.top = (y + boxPositions[3].posY) + "px"
+  for (let i = 1; i <= unlocks; i++) {
+    cachedBoxes[i].style.left = (x + boxPositions[i].posX) + "px"
+    cachedBoxes[i].style.top = (y + boxPositions[i].posY) + "px"
   }
   /*if (unlocks >= 3) {
     //Magic tab
