@@ -10,7 +10,12 @@
 
 <body>
     <header>
-        <h1 id="Title">IncrSEKAI</h1>
+        <h1 style="font-family: Monaco">IncrSEKAI</h1>
+        <div id="menu-container" class="container">
+            <button id="achivments-button">Logros</button>
+            <button id="config-button">Configuracion</button>
+            <button id="credits-button">Creditos</button>
+        </div>
     </header>
 
     <!-- Ventana de Dialogo -->
@@ -40,7 +45,10 @@
 
         <!-- Enemigos -->
         <div id="enemy-container" class="box window hidden">
-            <h2>Enemigo</h2>
+            <h2 id="enemy-name">Enemigo</h2>
+            <div>
+                <img id="enemy-image" src="./assets/slime.png" alt="Enemigo">
+            </div>
             <p>Vida Enemigo: <span id="enemy-health-value">10</span></p>
             <button id="attack-button">Atacar</button>
         </div>
@@ -48,9 +56,8 @@
         <!-- Tienda -->
         <div id="shop-container" class="box window hidden">
             <h2>Tienda</h2>
-            <button id="damage-upgrade-button">Comprar espada de madera <br> Costo: 1
-            </button>
             <button id="healingSpell-upgrade-button">Comprar hechizo de cura <br>Costo: 1</button>
+            <button id="damage-upgrade-button">Comprar espada de madera <br> Costo: 1</button>
         </div>
 
         <!-- Herreria runica -->
@@ -58,16 +65,17 @@
             <h2>Herreria Runica</h2>
             <button id="buy-imbue-sword-button">Inbuir espada con runa de ego<br> Costo: 100 de oro</button>
             <span id="ego-swords-display">Actualmente tienes 0 espadas con ego</span>
-    </div>
+        </div>
 
-    <script src="consts.js"></script>
-    <script src="script.js"></script>
-    <script src="preIsekai.js"></script>
-    <script src="isekai1.js"></script>
-    <script src="playerStats.js"></script>
-    <script src="render.js"></script>
-    <script src="runicForge.js"></script>
-    <script src="menu.js"></script>
+        <script src="consts.js"></script>
+        <script src="script.js"></script>
+        <script src="preIsekai.js"></script>
+        <script src="isekai1.js"></script>
+        <script src="playerStats.js"></script>
+        <script src="render.js"></script>
+        <script src="runicForge.js"></script>
+        <script src="menu.js"></script>
+        <script src="enemies.js"></script>
 
 
 </body>

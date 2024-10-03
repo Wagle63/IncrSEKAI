@@ -18,7 +18,7 @@ studyButton.addEventListener('click', () => {
 startButton.addEventListener('click', async () => {
     hideStartingUI();
     notifyDialog();
-    await showMessagesWithDelay(startingMessages);
+    //await showMessagesWithDelay(startingMessages);
     showISEKAIUI();
 });
 

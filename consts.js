@@ -10,26 +10,27 @@ const boxPositions = [
 
 const startingMessages = [
     // El primero no tiene delay, el delay es para el siguiente mensaje
-    { text: "De regreso de la tienda, te empiezas a sentir cansado", delay: 1000 },
-    { text: "Sientes que te pesan los párpados", delay: 1500 },
-    { text: "Y pronto te desmayas", delay: 1500 },
-    { text: "...", delay: 1000 },
-    { text: "...", delay: 1000 },
-    { text: "...", delay: 800 },
-    { text: "Abres los ojos pero solo logras ver una luz a lo lejos", delay: 2500 },
-    { text: "Caminas hacia la luz y te encuentras en un lugar desconocido", delay: 2000 },
-    { text: "Te encuentras con criaturas de fantasía, a lo lejos ves un castillo", delay: 1500 },
-    { text: "Incluso ves dragones surcando el cielo", delay: 1500 },
-    { text: "Y te das cuenta de que estas en otro mundo", delay: 0 }
+    { text: "> De regreso de la tienda, te empiezas a sentir cansado", delay: 1000 },
+    { text: "> Sientes que te pesan los párpados", delay: 1500 },
+    { text: "> Y pronto te desmayas", delay: 1500 },
+    { text: "> ...", delay: 1000 },
+    { text: "> ...", delay: 1000 },
+    { text: "> ...", delay: 800 },
+    { text: "> Abres los ojos pero solo logras ver una luz a lo lejos", delay: 2500 },
+    { text: "> Caminas hacia la luz y te encuentras en un lugar desconocido", delay: 2000 },
+    { text: "> Te encuentras con criaturas de fantasía, a lo lejos ves un castillo", delay: 1500 },
+    { text: "> Incluso ves dragones surcando el cielo", delay: 1500 },
+    { text: "> Y te das cuenta de que estas en otro mundo", delay: 0 }
 ]
 
-const enemyNames = ["Slime", "Goblin", "Orc", "Troll", "Litch", "Dragon"]
 
-const enemyHealths = [10, 20, 50, 100, 1000]
-
-const enemyDamages = [1, 2, 5, 10, 100]
-
-const enemyGoldRewards = [1, 2, 5, 10, 100]
+const enemies = [
+    { name: "Slime", health: 10, damage: 1, goldReward: 1, image: "./images/slime.png" },
+    { name: "Goblin", health: 20, damage: 2, goldReward: 2, image: "" },
+    { name: "Orc", health: 50, damage: 5, goldReward: 5, image: "" },
+    { name: "Troll", health: 100, damage: 10, goldReward: 10, image: "" },
+    { name: "Litch", health: 1000, damage: 100, goldReward: 100, image: "" },
+]
 
 //const enemyExperienceRewards = []
 
@@ -42,11 +43,11 @@ const achievements = [
 ]
 
 const runicForgeMessages = [
-    { text: "Bienvenido a la herreria runica", delay: 1000 },
-    { text: "Veo que tienen una buena arma", delay: 1000 },
-    { text: "Pero veo que todavia la sigues usando tu", delay: 1000 },
-    { text: "Puedo convertirla en un arma conciente que trabaja para ti", delay: 1000 },
-    { text: "Pero te costara 100 de oro", delay: 0 },
+    { text: "Herrero: Bienvenido a la herreria runica", delay: 1000 },
+    { text: "Herrero: Veo que tienen una buena arma", delay: 1000 },
+    { text: "Herrero: Pero veo que todavia peleas tu", delay: 1000 },
+    { text: "Herrero: Puedo convertirla en un arma conciente que trabaja para ti", delay: 1000 },
+    { text: "Herrero: Aunque no hara tanto daño", delay: 0 },
 ]
 
 const libraryMessages = [

@@ -1,15 +1,11 @@
-let enemyHealth = 10;
-let enemyDamage = 1;
 let damageUpgradeCost = 1;
 let healingSpellUpgradeCost = 1;
+
 
 // Referencias a elementos HTML
 const gameContainer = document.getElementById('game-container');
 const playerContainer = document.getElementById('player-container');
-const enemyContainer = document.getElementById('enemy-container');
-const attackButton = document.getElementById('attack-button');
 const damageUpgradeDamageButton = document.getElementById('damage-upgrade-button');
-const enemyHealthDisplay = document.getElementById('enemy-health-value');
 const shopContainer = document.getElementById('shop-container');
 const healingSpellUpgradeButton = document.getElementById('healingSpell-upgrade-button');
 
@@ -19,43 +15,9 @@ function showISEKAIUI() {
     unlocks = 2;
     gameContainer.style.cursor = 'all-scroll';
     playerContainer.style.display = 'grid';
-    enemyContainer.style.display = 'grid';
+    showEnemiesUI();
 }
 
-// Función para atacar al enemigo
-function attackEnemy() {
-    if (playerHealth <= 1) {
-        lowHealthNotification();
-        return;
-    }
-    enemyHealth -= playerDamage;
-    if (Math.random() < (1 - playerDefense)) {
-        if (playerHealth <= enemyDamage) {
-            playerHealth = 0.1;
-        } else {
-            playerHealth -= enemyDamage;
-        }
-        updatePlayerHealth();
-    }
-    updateEnemyHealth();
-}
-attackButton.addEventListener('click', () => {
-    attackEnemy();
-});
-
-// Funcion para actualizar vida del enemigo
-function updateEnemyHealth() {
-    if (enemyHealth <= 0) {
-        enemyHealth = 10;
-        gold++;
-        updateGold();
-        if (unlocks == 2) { // TODO: quitar de aca
-            shopContainer.style.display = 'grid';
-            unlocks++;
-        }
-    }
-    enemyHealthDisplay.textContent = enemyHealth;
-}
 
 // Función para comprar mejoras de daño
 function buyDamageUpgrade() {
