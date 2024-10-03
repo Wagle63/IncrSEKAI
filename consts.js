@@ -2,7 +2,6 @@ const maxDialog = 5;
 
 const boxPositions = [
     { posX: 0, posY: 0 },
-    { posX: 0, posY: 0 },
     { posX: -140, posY: 0 },
     { posX: 173, posY: 10 },
     { posX: 165, posY: -200 },

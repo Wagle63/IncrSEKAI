@@ -4,6 +4,8 @@ let unlocks = 0;
 
 // Referencias a elementos HTML
 const dialog = document.getElementById('dialog-text');
+const btnAchivments = document.getElementById('achivments-button');
+const achivmentsContainer = document.getElementById('achivments-container');
 
 // Función para mostrar los mensajes con un delay
 async function showMessagesWithDelay(messages) {
@@ -36,3 +38,12 @@ async function showDialog(t) {
         elementsDialog--;
     }
 };
+
+btnAchivments.addEventListener('click', () => {
+    if (achivmentsContainer.style.display == 'block') {
+        achivmentsContainer.style.display = 'none';
+    } else {
+        achivmentsContainer.style.display = 'block';
+    }
+});
+

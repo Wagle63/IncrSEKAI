@@ -13,7 +13,7 @@ renderVars = {
 }
 
 cachedBoxes = []
-for (let i = 0; i < boxPositions.length; i++) {
+for (let i = 1; i < boxPositions.length; i++) {
   cachedBoxes.push(document.getElementsByClassName("box")[i])
 }
 
@@ -46,29 +46,13 @@ inputVars = {
 //Sets the position of all the boxes based on the X and Y position variables
 //This is laggy!
 function render(x, y) {
-
-  /*cachedBoxes[1].style.left = (x) + "px"
-  dragonTabHeight = cachedBoxes[3].getBoundingClientRect().height
-  cachedBoxes[1].style.top = (y + 162 + dragonTabHeight / 2) + "px"*/
-  for (let i = 1; i <= unlocks; i++) {
+  for (let i = 0; i <= unlocks; i++) {
     cachedBoxes[i].style.left = (x + boxPositions[i].posX) + "px"
     cachedBoxes[i].style.top = (y + boxPositions[i].posY) + "px"
   }
-  /*if (unlocks >= 3) {
-    //Magic tab
-    cachedBoxes[6].style.left = (x) + "px"
-    cachedBoxes[6].style.top = (y - 287) + "px"
-    //Magic upgrades tab
-    cachedBoxes[7].style.left = (x - 365) + "px"
-    if (game.unlocks >= 6) { cachedBoxes[7].style.top = (y - 130) + "px" }
-    else { cachedBoxes[7].style.top = (y - 235) + "px" }
-  }*/
-  /*document.body.style.backgroundPosition = (x / 4) + "px " + (y / 4) + "px"
-  if (game.unlocks >= 29) cachedBoxes[38].style.backgroundPosition = (x / 6) + "px " + (y / 6) + "px"*/
   //console.log(Date.now() - renderVars.lastRender)
   renderVars.lastRender = Date.now();
 }
-
 render(renderVars.posX, renderVars.posY)
 
 function firstRender() {

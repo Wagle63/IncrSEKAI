@@ -51,6 +51,10 @@ button {
     align-self: stretch;
 }
 
+#achivments-container {
+    position: absolute;
+}
+
 .dialog-container {
     border: 5px solid #cccccc;
     border-radius: 5px;
@@ -113,6 +117,11 @@ button {
 #pre-isekai-container {
     display: grid;
     padding: 2em;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #start-button {
