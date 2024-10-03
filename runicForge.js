@@ -1,7 +1,7 @@
 let runicSwords = 0;
 let egoImbuedCost = 100;
 let runicSwordsDamage = 0;
-// R
+
 const runicForgeContainer = document.getElementById('runic-forge-container');
 const egoSwordsDisplay = document.getElementById('ego-swords-display');
 const buyImbueSwordButton = document.getElementById('buy-imbue-sword-button');
@@ -25,7 +25,7 @@ function buyEgoSword() {
         runicSwords++;
         egoSwordsDisplay.innerText = `Actualmente tienes ${runicSwords} espadas con ego`;
         buyImbueSwordButton.innerText = `Imbuir espada con ego \n Costo: ${egoImbuedCost.toFixed(0)} de oro`;
-        runicSwordsDamage += playerDamage;
+        runicSwordsDamage++;
         updateGold();
         playerDamage = 1;
         updateDamage();

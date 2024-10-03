@@ -6,6 +6,7 @@ let unlocks = 0;
 const dialog = document.getElementById('dialog-text');
 const btnAchivments = document.getElementById('achivments-button');
 const achivmentsContainer = document.getElementById('achivments-container');
+const dialogContainer = document.getElementById('dialog-container');
 
 // Función para mostrar los mensajes con un delay
 async function showMessagesWithDelay(messages) {
@@ -43,6 +44,8 @@ btnAchivments.addEventListener('click', () => {
     if (achivmentsContainer.style.display == 'block') {
         achivmentsContainer.style.display = 'none';
     } else {
+        achivmentsContainer.style.right = 0 + "px";
+        achivmentsContainer.style.top = dialogContainer.style.marginBottom + "px";
         achivmentsContainer.style.display = 'block';
     }
 });
