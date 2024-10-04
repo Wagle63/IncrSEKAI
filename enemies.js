@@ -7,12 +7,6 @@ const enemyNameDisplay = document.getElementById('enemy-name');
 const enemyHealthDisplay = document.getElementById('enemy-health-value');
 const attackButton = document.getElementById('attack-button');
 
-// Función para mostrar la interfaz de enemigos
-function showEnemiesUI() {
-    enemyContainer.style.display = 'grid';
-    enemyNameDisplay.textContent = enemies[currentEnemy].name;
-    enemyHealthDisplay.textContent = enemyHealth;
-}
 
 // Función para atacar al enemigo
 function attackEnemy() {
@@ -36,18 +30,15 @@ attackButton.addEventListener('click', () => {
 });
 
 
+// Updates
 // Funcion para actualizar vida del enemigo
 let updateEnemyHealthFunctions = [FIRSTupdateEnemyHealth, updateEnemyHealth];
 function FIRSTupdateEnemyHealth() {
     if (enemyHealth <= 0) {
-        enemyHealth = enemies[currentEnemy].health;
-        gold++;
-        updateGold();
-        shopContainer.style.display = 'grid';
-        unlocks++;
         updateEnemyHealthFunctions.shift();
+        showShopGUI();
     }
-    enemyHealthDisplay.textContent = enemyHealth;
+    updateEnemyHealth();
 }
 function updateEnemyHealth() {
     if (enemyHealth <= 0) {

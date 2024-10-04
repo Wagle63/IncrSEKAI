@@ -8,11 +8,11 @@ let playerDamage = 1;
 let regeneration = 0.1;
 
 // Referencias a elementos HTML
-const healingSpellButton = document.getElementById('healingSpell-button');
 const goldDisplay = document.getElementById('gold');
 const regenerationDisplay = document.getElementById('regeneration');
 const playerDamageDisplay = document.getElementById('player-damage-value');
 const healthDisplay = document.getElementById('player-health-value');
+const healingSpellButton = document.getElementById('healingSpell-button');
 
 // Función para curar al jugador
 function healPlayer() {
@@ -31,15 +31,8 @@ function castHealingSpell() {
         updatePlayerHealth();
     }
 }
-healingSpellButton.addEventListener('click', () => { castHealingSpell() });
 
-function updateHealingSpell() {
-    healingSpellButton.textContent = `Curar ${healingSpell} de vida`;
-}
 
-function updatePlayerHealth() {
-    healthDisplay.textContent = playerHealth.toFixed(1);
-}
 
 // Regeneracion pasiva del jugador
 function regenerate() {
@@ -51,6 +44,16 @@ function regenerate() {
 }
 setInterval(regenerate, 1000);
 
+// Funcion de notificacion de vida baja
+function lowHealthNotification() {
+    if (lastLowHealthNotification + 60000 < Date.now()) {
+        lastLowHealthNotification = Date.now();
+        showDialog("Estas demasido herido, no puedes pelear");
+    }
+}
+
+
+// Funciones para actualizar
 // Función para calcular la defensa del jugador
 function updatePlayerDefense() {
     playerDefense += 0.1;
@@ -66,10 +69,16 @@ function updateGold() {
     goldDisplay.innerText = gold;
 }
 
-// Funcion de notificacion de vida baja
-function lowHealthNotification() {
-    if (lastLowHealthNotification + 60000 < Date.now()) {
-        lastLowHealthNotification = Date.now();
-        showDialog("Estas demasido herido, no puedes pelear");
-    }
+function updateHealingSpell() {
+    healingSpellButton.textContent = `Curar ${healingSpell} de vida`;
+}
+
+function updatePlayerHealth() {
+    healthDisplay.textContent = playerHealth.toFixed(1);
+}
+
+// Función para mostrar el botón de curación
+function showHealingSpellButton() {
+    healingSpellButton.style.display = 'block';
+    healingSpellButton.addEventListener('click', () => { castHealingSpell() });
 }

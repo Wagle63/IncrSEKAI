@@ -2,16 +2,10 @@ let runicSwords = 0;
 let egoImbuedCost = 100;
 let runicSwordsDamage = 0;
 
-const runicForgeContainer = document.getElementById('runic-forge-container');
 const egoSwordsDisplay = document.getElementById('ego-swords-display');
 const buyImbueSwordButton = document.getElementById('buy-imbue-sword-button');
 
-// Función para mostrar la interfaz de la forja rúnica
-function showRunicForgeUI() {
-    runicForgeContainer.style.display = 'grid';
-    notifyDialog();
-    showMessagesWithDelay(runicForgeMessages);
-}
+
 
 // Función para imbuir con ego la espada
 function buyEgoSword() {

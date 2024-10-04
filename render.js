@@ -46,7 +46,7 @@ inputVars = {
 //Sets the position of all the boxes based on the X and Y position variables
 //This is laggy!
 function render(x, y) {
-  for (let i = 0; i < unlocks; i++) {
+  for (let i = 0; i <= unlocks; i++) {
     cachedBoxes[i].style.left = (x + boxPositions[i].posX) + "px"
     cachedBoxes[i].style.top = (y + boxPositions[i].posY) + "px"
   }

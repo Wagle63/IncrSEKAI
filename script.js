@@ -1,6 +1,7 @@
 // Variables del juego
 let elementsDialog = 0;
 let unlocks = 0;
+let activeDialog = [];
 
 // Referencias a elementos HTML
 const dialog = document.getElementById('dialog-text');
@@ -10,21 +11,24 @@ const dialogContainer = document.getElementById('dialog-container');
 
 // Función para mostrar los mensajes con un delay
 async function showMessagesWithDelay(messages) {
+    activeDialog.push(messages);
     return new Promise((resolve) => {
         let index = 0;
-
         function showNextMessage() {
-            if (index < messages.length) {
-                const message = messages[index];
+            if (activeDialog.length == 0) { resolve(); }
+            if (activeDialog[0].length > 0) {
+                const message = activeDialog[0][0];
                 showDialog(message.text);
-                index++;
+                activeDialog[0].shift();
                 setTimeout(showNextMessage, message.delay);
             } else {
-                resolve(); // Resuelve la promesa cuando se hayan mostrado todos los mensajes
+                activeDialog.shift();
             }
         }
-
-        showNextMessage(); // Inicia la secuencia de mensajes
+        notifyDialog();
+        showNextMessage();
+        // asi como esta si llega otro dialogo va a ~doble de velocidad
+        // no es a proposito pero es util
     });
 }
 
@@ -34,7 +38,7 @@ async function showDialog(t) {
     newMessage.textContent = t;
     dialog.appendChild(newMessage);
     elementsDialog++;
-    if (elementsDialog >= maxDialog) {
+    if (elementsDialog >= 5) {
         dialog.removeChild(dialog.firstChild);
         elementsDialog--;
     }
@@ -44,9 +48,64 @@ btnAchivments.addEventListener('click', () => {
     if (achivmentsContainer.style.display == 'block') {
         achivmentsContainer.style.display = 'none';
     } else {
-        achivmentsContainer.style.right = 0 + "px";
-        achivmentsContainer.style.top = dialogContainer.style.marginBottom + "px";
         achivmentsContainer.style.display = 'block';
     }
 });
 
+
+
+
+
+
+// Funciones para cargar y guardar el estado del juego
+async function saveGame() {
+    let gameData = {
+        playerDamage: playerDamage,
+        playerHealth: playerHealth,
+        playerDefense: playerDefense,
+        regeneration: regeneration,
+        gold: gold,
+        healingSpell: healingSpell,
+        damageUpgradeCost: damageUpgradeCost,
+        healingSpellUpgradeCost: healingSpellUpgradeCost,
+        study: study,
+        unlocks: unlocks,
+        enemyHealth: enemyHealth,
+        healingSpellUpgradeFunctions: healingSpellUpgradeFunctions.length,
+        updateEnemyHealthFunctions: updateEnemyHealthFunctions.length,
+    };
+    localStorage.setItem('gameData', JSON.stringify(gameData));
+    //console.log(localStorage.getItem('gameData'));
+}
+
+setInterval(saveGame, 10000);
+
+function loadGame() {
+    let savedData = JSON.parse(localStorage.getItem('gameData'));
+    if (savedData) {
+        playerDamage = savedData.playerDamage;
+        playerHealth = savedData.playerHealth;
+        playerDefense = savedData.playerDefense;
+        regeneration = savedData.regeneration;
+        gold = savedData.gold;
+        healingSpell = savedData.healingSpell;
+        damageUpgradeCost = savedData.damageUpgradeCost;
+        healingSpellUpgradeCost = savedData.healingSpellUpgradeCost;
+        study = savedData.study;
+        unlocks = savedData.unlocks;
+        enemyHealth = savedData.enemyHealth;
+        if (savedData.healingSpellUpgradeFunctions == 1) {
+            healingSpellUpgradeFunctions.shift();
+            showHealingSpellButton();
+        }
+        if (savedData.updateEnemyHealthFunctions == 1) {
+            updateEnemyHealthFunctions.shift();
+        }
+        updateALLGUI();
+    }
+}
+
+function resetGame() {
+    localStorage.removeItem('gameData');
+    location.reload();
+}

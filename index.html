@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="IncrSEKAI" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="IncrSEKAI">
     <title>IncrSEKAI</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
 <body>
@@ -15,29 +16,30 @@
         <p></p>
         <div id="menu-container" class="container">
             <button id="achivments-button">Logros</button>
+            <button id="Home-button">Home</button>
             <button id="config-button">Configuracion</button>
             <button id="credits-button">Creditos</button>
         </div>
     </header>
 
-    <!-- Ventana de Logros -->
-    <div id="achivments-container" class="window hidden">
-        <h2>Logros</h2>
-        <ul id="achivments-list">
-            <li id="achivment-1">Logro 1</li>
-            <li id="achivment-2">Logro 2</li>
-            <li id="achivment-3">Logro 3</li>
-            <li id="achivment-4">Logro 4</li>
-            <li id="achivment-5">Logro 5</li>
-        </ul>
-    </div>
-
     <!-- Ventana de Dialogo -->
     <div id="dialog-container" class="dialog-container">
-        <p id="dialog-text">Deberia de estudiar pero tengo hambre</p>
+        <p id="dialog-text" place>Deberia de estudiar pero tengo hambre</p>
     </div>
 
     <div id="game-container" class="game-container">
+
+        <!-- Ventana de Logros -->
+        <div id="achivments-container" class="window hidden">
+            <h2>Logros</h2>
+            <ul id="achivments-list">
+                <li id="achivment-1">Logro 1</li>
+                <li id="achivment-2">Logro 2</li>
+                <li id="achivment-3">Logro 3</li>
+                <li id="achivment-4">Logro 4</li>
+                <li id="achivment-5">Logro 5</li>
+            </ul>
+        </div>
 
         <!-- PRE ISEKAI-->
         <div id="pre-isekai-container" class="box window">
@@ -81,15 +83,18 @@
             <span id="ego-swords-display">Actualmente tienes 0 espadas con ego</span>
         </div>
 
+
         <script src="consts.js"></script>
         <script src="script.js"></script>
-        <script src="preIsekai.js"></script>
-        <script src="isekai1.js"></script>
-        <script src="playerStats.js"></script>
         <script src="render.js"></script>
+        <script src="preIsekai.js"></script>
+        <script src="shop.js"></script>
+        <script src="playerStats.js"></script>
         <script src="runicForge.js"></script>
         <script src="menu.js"></script>
         <script src="enemies.js"></script>
+        <script src="gameGUI.js"></script>
+        <script>loadGame();</script>
 
 
 </body>

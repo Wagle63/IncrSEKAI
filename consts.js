@@ -41,6 +41,15 @@ const achievements = [
     { name: "Aprende de tus enemigos", description: "Derrota a un Litch", reward: "Desbloquea el mana" },
 ]
 
+const shopMessages = [
+    { text: "Vendedor: Vi como derrotaste a ese slime", delay: 1000 },
+    { text: "Vendedor: Si bien es un enemigo muy devil", delay: 1000 },
+    { text: "Vendedor: Es impresionante que lo hayas derrotado solo con tus manos", delay: 1000 },
+    { text: "Vendedor: No eres como los demas 'viajeros', tienes bastante talento", delay: 1000 },
+    { text: "Vendedor: Por eso te dare acceso a mi tienda", delay: 1000 },
+    { text: "Vendedor: Viendo lo herido que estas te recomendaria comprar un hechizo de curacion", delay: 0 },
+]
+
 const runicForgeMessages = [
     { text: "Herrero: Bienvenido a la herreria runica", delay: 1000 },
     { text: "Herrero: Veo que tienen una buena arma", delay: 1000 },
