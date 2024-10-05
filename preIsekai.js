@@ -15,7 +15,7 @@ studyButton.addEventListener('click', () => {
 
 // Función para comenzar el juego
 startButton.addEventListener('click', async () => {
-    hideStartingGUI(true);
+    hideStartingGUI();
     showISEKAIGUI();
 });
 
