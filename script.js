@@ -8,10 +8,6 @@ const dialog = document.getElementById('dialog-text');
 const btnAchivments = document.getElementById('achivments-button');
 const achivmentsContainer = document.getElementById('achivments-container');
 const dialogContainer = document.getElementById('dialog-container');
-const saveBtn = document.getElementById('save-button');
-const resetBtn = document.getElementById('reset-button');
-const configBtn = document.getElementById('config-button');
-const configContainer = document.getElementById('config-container');
 
 // Función para mostrar los mensajes con un delay
 async function showMessagesWithDelay(messages) {
@@ -48,7 +44,6 @@ async function showDialog(t) {
     }
 };
 
-// Mostrar menus de los botones de arriba
 btnAchivments.addEventListener('click', () => {
     if (achivmentsContainer.style.display == 'block') {
         achivmentsContainer.style.display = 'none';
@@ -56,13 +51,8 @@ btnAchivments.addEventListener('click', () => {
         achivmentsContainer.style.display = 'block';
     }
 });
-configBtn.addEventListener('click', () => {
-    if (configContainer.style.display == 'flex') {
-        configContainer.style.display = 'none';
-    } else {
-        configContainer.style.display = 'flex';
-    }
-});
+
+
 
 
 
@@ -87,7 +77,6 @@ async function saveGame() {
     localStorage.setItem('gameData', JSON.stringify(gameData));
     //console.log(localStorage.getItem('gameData'));
 }
-saveBtn.addEventListener('click', () => { saveGame(); });
 
 setInterval(saveGame, 10000);
 
@@ -120,4 +109,3 @@ function resetGame() {
     localStorage.removeItem('gameData');
     location.reload();
 }
-resetBtn.addEventListener('click', () => { resetGame(); });

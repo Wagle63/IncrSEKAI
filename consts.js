@@ -43,11 +43,11 @@ const achievements = [
 
 const shopMessages = [
     { text: "Vendedor: Vi como derrotaste a ese slime", delay: 1000 },
-    { text: "Vendedor: Si bien es un enemigo muy debil", delay: 1000 },
+    { text: "Vendedor: Si bien es un enemigo muy devil", delay: 1000 },
     { text: "Vendedor: Es impresionante que lo hayas derrotado solo con tus manos", delay: 1000 },
     { text: "Vendedor: No eres como los demas 'viajeros', tienes bastante talento", delay: 1000 },
     { text: "Vendedor: Por eso te dare acceso a mi tienda", delay: 1000 },
-    { text: "Vendedor: Viendo lo herido que estas te recomendaria comprar un hechizo de curación", delay: 0 },
+    { text: "Vendedor: Viendo lo herido que estas te recomendaria comprar un hechizo de curacion", delay: 0 },
 ]
 
 const runicForgeMessages = [

@@ -15,7 +15,3 @@ async function notifyDialog() {
 async function changeColorDialog(color) {
     dialogContainer.style.borderColor = "#" + color;
 }
-
-function firstDialog() {
-    showDialog("Deberia de estudiar pero tengo hambre");
-}
