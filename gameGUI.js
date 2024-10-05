@@ -1,9 +1,5 @@
 
-const preIsekaiContainer = document.getElementById('pre-isekai-container');
-const gameContainer = document.getElementById('game-container');
-const playerContainer = document.getElementById('player-container');
-const shopContainer = document.getElementById('shop-container');
-const runicForgeContainer = document.getElementById('runic-forge-container');
+function initialDialog() { showDialog('Deberia de estudiar pero tengo hambre'); }
 
 // La primera es xq en unlock 0 es la gui inicial
 const cachedGUIs = [() => { }, showISEKAIGUI, showShopGUI, showRunicForgeUI];

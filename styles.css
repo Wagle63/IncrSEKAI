@@ -56,6 +56,19 @@ button {
     top: 0;
 }
 
+#config-container {
+    position: absolute;
+    z-index: 10;
+    size: fit-content;
+    margin-right: 3px;
+    right: 0;
+    top: 0;
+}
+
+#save-button {
+    background-color: green;
+}
+
 .dialog-container {
     border: 5px solid #cccccc;
     border-radius: 5px;
@@ -136,4 +149,8 @@ button {
 #enemy-image {
     width: 100px;
     height: 100px;
+}
+
+#enemy-container {
+    width: 7em;
 }

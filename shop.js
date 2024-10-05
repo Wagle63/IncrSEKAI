@@ -1,9 +1,6 @@
 let damageUpgradeCost = 1;
 let healingSpellUpgradeCost = 1;
 
-// Referencias a elementos HTML
-const damageUpgradeDamageButton = document.getElementById('damage-upgrade-button');
-const healingSpellUpgradeButton = document.getElementById('healingSpell-upgrade-button');
 
 // Función para comprar mejoras de daño
 function buyDamageUpgrade() {

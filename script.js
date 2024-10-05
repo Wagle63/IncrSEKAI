@@ -3,11 +3,6 @@ let elementsDialog = 0;
 let unlocks = 0;
 let activeDialog = [];
 
-// Referencias a elementos HTML
-const dialog = document.getElementById('dialog-text');
-const btnAchivments = document.getElementById('achivments-button');
-const achivmentsContainer = document.getElementById('achivments-container');
-const dialogContainer = document.getElementById('dialog-container');
 
 // Función para mostrar los mensajes con un delay
 async function showMessagesWithDelay(messages) {
@@ -52,7 +47,13 @@ btnAchivments.addEventListener('click', () => {
     }
 });
 
-
+configButton.addEventListener('click', () => {
+    if (configContainer.style.display == 'flex') {
+        configContainer.style.display = 'none';
+    } else {
+        configContainer.style.display = 'flex';
+    }
+});
 
 
 
@@ -77,6 +78,7 @@ async function saveGame() {
     localStorage.setItem('gameData', JSON.stringify(gameData));
     //console.log(localStorage.getItem('gameData'));
 }
+saveButton.addEventListener('click', saveGame);
 
 setInterval(saveGame, 10000);
 
@@ -109,3 +111,4 @@ function resetGame() {
     localStorage.removeItem('gameData');
     location.reload();
 }
+resetButton.addEventListener('click', resetGame);

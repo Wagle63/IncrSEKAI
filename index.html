@@ -16,7 +16,7 @@
         <p></p>
         <div id="menu-container" class="container">
             <button id="achivments-button">Logros</button>
-            <button id="Home-button">Home</button>
+            <button id="home-button">Home</button>
             <button id="config-button">Configuracion</button>
             <button id="credits-button">Creditos</button>
         </div>
@@ -24,7 +24,7 @@
 
     <!-- Ventana de Dialogo -->
     <div id="dialog-container" class="dialog-container">
-        <p id="dialog-text" place>Deberia de estudiar pero tengo hambre</p>
+        <p id="dialog-text" place></p>
     </div>
 
     <div id="game-container" class="game-container">
@@ -41,6 +41,12 @@
             </ul>
         </div>
 
+        <!-- Ventana de Configuracion -->
+        <div id="config-container" class="window hidden">
+            <button id="reset-button">Reiniciar</button>
+            <button id="save-button">Guardar</button>
+        </div>
+
         <!-- PRE ISEKAI-->
         <div id="pre-isekai-container" class="box window">
             <button id="study-button">Estudiar</button> <!-- se guarda el estudio para mecanica futura (TODO)-->
@@ -53,7 +59,7 @@
         <!-- Stats de jugador -->
         <div id="player-container" class="box window hidden">
             <h2>Estadisticas</h2>
-            <p>Vida: <span id="player-health-value">10.0</span></p>
+            <p>Vida: <span id="player-health-value"></span></p>
             <button id="healingSpell-button" class="hidden">Hechizo de cura</button>
             <p>Daño: <span id="player-damage-value">1</span></p>
             <p>Oro: <span id="gold">0</span> </p>
@@ -63,9 +69,11 @@
         <div id="enemy-container" class="box window hidden">
             <h2 id="enemy-name">Enemigo</h2>
             <div>
-                <img id="enemy-image" src="./assets/slime.png" alt="Enemigo">
+                <img id="enemy-image" src="./assets/slime.png" type="image/svg+xml" alt="Enemigo">
             </div>
-            <p>Vida Enemigo: <span id="enemy-health-value">10</span></p>
+            <p>Vida Enemigo: <br>
+                <span id="enemy-health-value">10</span>
+            </p>
             <button id="attack-button">Atacar</button>
         </div>
 
@@ -84,17 +92,17 @@
         </div>
 
 
-        <script src="consts.js"></script>
-        <script src="script.js"></script>
-        <script src="render.js"></script>
-        <script src="preIsekai.js"></script>
-        <script src="shop.js"></script>
-        <script src="playerStats.js"></script>
-        <script src="runicForge.js"></script>
-        <script src="menu.js"></script>
-        <script src="enemies.js"></script>
-        <script src="gameGUI.js"></script>
-        <script>loadGame();</script>
+        <script src="consts.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <script src="render.js" type="text/javascript"></script>
+        <script src="preIsekai.js" type="text/javascript"></script>
+        <script src="shop.js" type="text/javascript"></script>
+        <script src="playerStats.js" type="text/javascript"></script>
+        <script src="runicForge.js" type="text/javascript"></script>
+        <script src="menu.js" type="text/javascript"></script>
+        <script src="enemies.js" type="text/javascript"></script>
+        <script src="gameGUI.js" type="text/javascript"></script>
+        <script>loadGame(); if (unlocks == 0) { initialDialog(); }</script>
 
 
 </body>

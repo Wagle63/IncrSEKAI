@@ -43,11 +43,11 @@ const achievements = [
 
 const shopMessages = [
     { text: "Vendedor: Vi como derrotaste a ese slime", delay: 1000 },
-    { text: "Vendedor: Si bien es un enemigo muy devil", delay: 1000 },
+    { text: "Vendedor: Si bien es un enemigo muy debil", delay: 1000 },
     { text: "Vendedor: Es impresionante que lo hayas derrotado solo con tus manos", delay: 1000 },
     { text: "Vendedor: No eres como los demas 'viajeros', tienes bastante talento", delay: 1000 },
     { text: "Vendedor: Por eso te dare acceso a mi tienda", delay: 1000 },
-    { text: "Vendedor: Viendo lo herido que estas te recomendaria comprar un hechizo de curacion", delay: 0 },
+    { text: "Vendedor: Viendo lo herido que estas te recomendaria comprar un hechizo de curación", delay: 0 },
 ]
 
 const runicForgeMessages = [
@@ -71,3 +71,35 @@ const egoSwordMessages = [
     { text: "(Risa malvada)", delay: 1000 },
     { text: "Ahora no puedes hacer mas pactos con ninguna otra espada", delay: 0 },
 ]
+
+
+// Referencias a elementos HTML
+const studyDisplay = document.getElementById('study');
+const startButton = document.getElementById('start-button');
+const studyButton = document.getElementById('study-button');
+const preIsekaiContainer = document.getElementById('pre-isekai-container');
+const gameContainer = document.getElementById('game-container');
+const playerContainer = document.getElementById('player-container');
+const shopContainer = document.getElementById('shop-container');
+const runicForgeContainer = document.getElementById('runic-forge-container');
+const dialog = document.getElementById('dialog-text');
+const btnAchivments = document.getElementById('achivments-button');
+const achivmentsContainer = document.getElementById('achivments-container');
+const dialogContainer = document.getElementById('dialog-container');
+const configContainer = document.getElementById('config-container');
+const configButton = document.getElementById('config-button');
+const saveButton = document.getElementById('save-button');
+const resetButton = document.getElementById('reset-button');
+const enemyContainer = document.getElementById('enemy-container');
+const enemyNameDisplay = document.getElementById('enemy-name');
+const enemyHealthDisplay = document.getElementById('enemy-health-value');
+const attackButton = document.getElementById('attack-button');
+const goldDisplay = document.getElementById('gold');
+const regenerationDisplay = document.getElementById('regeneration');
+const playerDamageDisplay = document.getElementById('player-damage-value');
+const healthDisplay = document.getElementById('player-health-value');
+const healingSpellButton = document.getElementById('healingSpell-button');
+const egoSwordsDisplay = document.getElementById('ego-swords-display');
+const buyImbueSwordButton = document.getElementById('buy-imbue-sword-button');
+const damageUpgradeDamageButton = document.getElementById('damage-upgrade-button');
+const healingSpellUpgradeButton = document.getElementById('healingSpell-upgrade-button');

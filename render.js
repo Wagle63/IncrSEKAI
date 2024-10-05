@@ -12,6 +12,9 @@ renderVars = {
   isAutoPanning: false
 }
 
+homeBtn = document.getElementById("home-button");
+homeBtn.addEventListener('click', () => { posSet(0, 0) });
+
 cachedBoxes = []
 for (let i = 1; i < (boxPositions.length + 1); i++) {
   cachedBoxes.push(document.getElementsByClassName("box")[i])

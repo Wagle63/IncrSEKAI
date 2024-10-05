@@ -3,16 +3,9 @@ let playerHealth = maxHealth;
 let lastLowHealthNotification = 0;
 let healingSpell = 0;
 let gold = 0;
-let playerDefense = 0.1;
+let playerDefense = 0.11;
 let playerDamage = 1;
 let regeneration = 0.1;
-
-// Referencias a elementos HTML
-const goldDisplay = document.getElementById('gold');
-const regenerationDisplay = document.getElementById('regeneration');
-const playerDamageDisplay = document.getElementById('player-damage-value');
-const healthDisplay = document.getElementById('player-health-value');
-const healingSpellButton = document.getElementById('healingSpell-button');
 
 // Función para curar al jugador
 function healPlayer() {

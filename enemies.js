@@ -1,12 +1,6 @@
 let currentEnemy = 0;
 let enemyHealth = enemies[currentEnemy].health;
 
-// Referencias a elementos HTML
-const enemyContainer = document.getElementById('enemy-container');
-const enemyNameDisplay = document.getElementById('enemy-name');
-const enemyHealthDisplay = document.getElementById('enemy-health-value');
-const attackButton = document.getElementById('attack-button');
-
 
 // Función para atacar al enemigo
 function attackEnemy() {
@@ -25,9 +19,7 @@ function attackEnemy() {
     }
     updateEnemyHealthFunctions[0]();
 }
-attackButton.addEventListener('click', () => {
-    attackEnemy();
-});
+attackButton.addEventListener('click', attackEnemy);
 
 
 // Updates
