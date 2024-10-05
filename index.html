@@ -16,7 +16,7 @@
         <p></p>
         <div id="menu-container" class="container">
             <button id="achivments-button">Logros</button>
-            <button id="Home-button">Home</button>
+            <button id="home-button">Home</button>
             <button id="config-button">Configuracion</button>
             <button id="credits-button">Creditos</button>
         </div>
@@ -24,7 +24,7 @@
 
     <!-- Ventana de Dialogo -->
     <div id="dialog-container" class="dialog-container">
-        <p id="dialog-text" place>Deberia de estudiar pero tengo hambre</p>
+        <p id="dialog-text" place></p>
     </div>
 
     <div id="game-container" class="game-container">
@@ -39,6 +39,12 @@
                 <li id="achivment-4">Logro 4</li>
                 <li id="achivment-5">Logro 5</li>
             </ul>
+        </div>
+
+        <!-- Ventana de Configuracion -->
+        <div id="config-container" class="window hidden">
+            <button id="reset-button">Reiniciar</button>
+            <button id="save-button">Guardar</button>
         </div>
 
         <!-- PRE ISEKAI-->
@@ -94,7 +100,7 @@
         <script src="menu.js"></script>
         <script src="enemies.js"></script>
         <script src="gameGUI.js"></script>
-        <script>loadGame();</script>
+        <script>loadGame(); if (unlocks == 0) { firstDialog() }</script>
 
 
 </body>

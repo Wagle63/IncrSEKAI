@@ -56,6 +56,25 @@ button {
     top: 0;
 }
 
+#config-container {
+    position: absolute;
+    z-index: 10;
+    size: fit-content;
+    margin-right: 3px;
+    right: 0;
+    top: 0;
+}
+
+#reset-button {
+    background-color: red;
+    color: #0a0a0a
+}
+
+#save-button {
+    background-color: green;
+}
+
+
 .dialog-container {
     border: 5px solid #cccccc;
     border-radius: 5px;
